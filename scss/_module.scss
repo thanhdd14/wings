@@ -27,7 +27,7 @@
 		transform: rotate(180deg);
 	}
 	@include p-before(36px, 36px){
-		background: url(../img/triagle-blue.png) no-repeat top right/100%;
+		background: url(../img/index/triagle-blue.png) no-repeat top right/100%;
 		top: 0;
 		right: 0;
 		transform: rotate(180deg);
@@ -35,7 +35,7 @@
 		right: -7px;
 	}
 	@include p-after(36px, 36px){
-		background: url(../img/triagle-yellow.png) no-repeat top right/100%;
+		background: url(../img/index/triagle-yellow.png) no-repeat top right/100%;
 		left: -3px;
 		bottom: -7px;
 	}
@@ -43,7 +43,7 @@
 		&::before, &:after{
 			width: 100px;
 			height: 100px;
-			@include mq{
+			@include mq(tb){
 				width: 50px;
 				height: 50px;
 			}
@@ -52,13 +52,13 @@
 			left: 0;
 			right: auto;
 			transform: rotate(0);
-			background: url(../img/triagle-yellow-02.png) no-repeat center/100%;
+			background: url(../img/index/triagle-yellow-02.png) no-repeat center/100%;
 		}
 		&:after{
 			right: 0;
 			left: auto;
 			transform: rotate(0);
-			background: url(../img/triagle-blue-02.png) no-repeat center/100%;
+			background: url(../img/index/triagle-blue-02.png) no-repeat center/100%;
 		}
 	}
 }
@@ -77,6 +77,11 @@
 	&--top{
 		top: -38px;
 		left: -25px;
+		@include mq(){
+			left: 0;
+			right: 0;
+			text-align: center;
+		}
 	}
 	&--bottom{
 		bottom: 0;

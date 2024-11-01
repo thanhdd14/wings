@@ -103,13 +103,13 @@ Component
 .c-txt{
 	&__01{
 		@include fts(16,30);
-		@include mq{
+		@include mq(lg){
 			@include font-size(14);
 		}
 	}
 	&__02{
 		@include fts(18,30);
-		@include mq{
+		@include mq(lg){
 			@include font-size(15);
 		}
 	}
@@ -204,7 +204,7 @@ Component
 			font-weight: 700;
 			line-height: 1;
 			letter-spacing: 7px;
-			@include mq{
+			@include mq(tb){
 				letter-spacing: 3px;
 			}
 		}
