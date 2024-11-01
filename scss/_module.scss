@@ -1,0 +1,87 @@
+@use "vars" as *;
+
+
+.inner {
+	display: block;
+	max-width: 1810px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+
+.txt-underline{
+	border-bottom: 1px solid;
+	line-height: 1;
+}
+
+.img-corner{
+	position: relative;
+	span{
+		display: block;
+		padding: 20px;
+		background: #f3f3f6;
+	}
+	&::before, &:after{
+		z-index: 10;
+		transform: rotate(180deg);
+	}
+	@include p-before(36px, 36px){
+		background: url(../img/triagle-blue.png) no-repeat top right/100%;
+		top: 0;
+		right: 0;
+		transform: rotate(180deg);
+		top: -5px;
+		right: -7px;
+	}
+	@include p-after(36px, 36px){
+		background: url(../img/triagle-yellow.png) no-repeat top right/100%;
+		left: -3px;
+		bottom: -7px;
+	}
+	&--02{
+		&::before, &:after{
+			width: 100px;
+			height: 100px;
+			@include mq{
+				width: 50px;
+				height: 50px;
+			}
+		}
+		&::before{
+			left: 0;
+			right: auto;
+			transform: rotate(0);
+			background: url(../img/triagle-yellow-02.png) no-repeat center/100%;
+		}
+		&:after{
+			right: 0;
+			left: auto;
+			transform: rotate(0);
+			background: url(../img/triagle-blue-02.png) no-repeat center/100%;
+		}
+	}
+}
+
+
+.txt-deco{
+	// @include font-size(291.96);
+	font-size: clamp(6.5rem, 0.991rem + 14.69vw, 29.196rem);
+	line-height: 1;
+	font-family: $font-URWDINSemi;
+	-webkit-text-stroke: 1px #fff;
+	color: transparent;
+	position: absolute;
+	letter-spacing: 5px;
+	white-space: nowrap;
+	&--top{
+		top: -38px;
+		left: -25px;
+	}
+	&--bottom{
+		bottom: 0;
+		right: -15px;
+		transform: translateY(31%);
+		letter-spacing: 3px;
+	}
+}

@@ -1,0 +1,1854 @@
+@use "vars" as *;
+
+.lp-mv{
+	padding-bottom: 100px;
+	@include mq{
+		padding-bottom: 0;
+	}
+	&__ttl{
+		position: absolute;
+		top: 47%;
+		padding: 0 70px;
+		transform: translateY(-50%);
+		width: 100%;
+		z-index: 14;
+		
+		@include mq{
+			padding: 0 5%;
+			top: 22%;
+		}
+		.txt-sm{
+			@include font-size(48);
+			font-weight: 600;
+			letter-spacing: .06em;
+			margin-bottom: 13px;
+			display: block;
+			position: relative;
+			@include mq{
+				@include font-size(28);
+				letter-spacing: 0;
+			}
+			@include p-after(35%, 1px){
+				background: #000;
+				left: 0;
+				bottom: -2px;
+			}
+		}
+		.txt-lg{
+			width: 85%;
+		    margin: 0 auto;
+		    display: block;
+		}
+	}
+	&__ttlsub{
+		@include fts(36, 67);
+		font-weight: 600;
+		position: absolute;
+		bottom: 16%;
+		left: 70px;
+		text-align: center;
+		letter-spacing: .03em;
+		z-index: 10;
+		@include mq{
+			@include font-size(24);
+			top: 32%;
+			z-index: 10;
+			width: 100%;
+			bottom: auto;
+			left: 0;
+		}
+	}
+	&__img{
+		width: 70%;
+		margin-left: auto;
+		margin-right: 0;
+		position: relative;
+		@include mq{
+			width: 80%;
+		}
+		@include p-before(570px, 397px){
+			background: url(../img/mv-bf.png) no-repeat center/100%;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			@include mq{
+				display: none;
+			}
+		}
+		@include p-after(570px, 465px){
+			background: url(../img/mv-af.png) no-repeat center/100%;
+			right: -10px;
+			bottom: 40px;
+			@include mq{
+				display: none;
+			}
+		}
+		img{
+			width: 100%;
+			min-height: 863px;
+			object-fit: cover;
+			@include mq{
+				min-height: 100vh;
+			}
+		}
+	}
+	&__slider{
+		&-pagination{
+			@include font-size(11.16);
+			opacity: .57;
+			margin-top: 20px;
+			margin-left: 6px;
+			@include mq{
+				margin-top: 0;
+				bottom: 30px;
+				position: relative;
+				margin-bottom: -20px;
+			}
+			span{
+				@include font-size(13.59);
+				margin-right: 6px;
+			}
+		}
+		.slick-dots{
+			text-align: left;
+			bottom: -20px;
+			transform: translateY(100%);
+			margin-left: 58px;
+			@include mq{
+				bottom: 30px;
+			}
+			li{
+				margin: 0 4.5px;
+				button{
+					padding: 0;
+					width: 36px;
+					height: 4px;
+					background: #b4b4b4;
+					&::before{
+						display: none;
+					}
+				}
+				&.slick-active{
+					button{
+						background: #606060;
+					}
+				}
+			}
+		}
+	}
+	&__bnr{
+		position: absolute;
+		max-width: 450px;
+		right: 70px;
+		bottom: 9.5%;
+		@include mq{
+			max-width: 250px;
+			right: 0;
+			bottom: 20%;
+		}
+		&-line{
+			display: block;
+			width: 217px;
+			margin-bottom: 15px;
+			margin-left: auto;
+			margin-right: 0;
+			@include mq{
+				width: 100px;
+			}
+		}
+		&-note{
+			display: block;
+			box-shadow: 0 0 24px rgba(#000, 0.17);
+		}
+	}
+}
+
+
+.top-news{
+	padding: 33px 0;
+	background: #e4e3e3;
+	border-top: 2px solid #fcb42a;
+	border-bottom: 2px solid #2564d6;
+	.inner{
+		@include flex(0, 0, wrap);
+	}
+	&__ttl{
+		width: 278px;
+		@include font-size(36);
+		font-weight: 300;
+		@include mq{
+			@include font-size(24);
+			width: 100%;
+			margin-bottom: 30px;
+		}
+		span{
+			@include font-size(16);
+			position: relative;
+			display: inline-block;
+			margin-bottom: 12px;
+			line-height: 1.4;
+			@include mq{
+				@include font-size(14);
+			}
+			span{
+				border-bottom: 1px solid;
+				margin-bottom: 0;
+				line-height: 1;
+			}
+		}
+	}
+	&__slider{
+		width: calc(100% - 278px);
+		margin: 0 -19px;
+		max-width: 1275px;
+		@include mq{
+			@include font-size(24);
+			width: 100%;
+		}
+		@include mq(sm){
+			margin: 0;
+		}
+		.slick-arrow{
+			width: 40px;
+			height: 40px;
+			top: 31%;
+			&::before{
+				content: "";
+				display: block;
+				width: 40px;
+				height: 40px;
+			}
+			&.slick-prev, &.slick-next{
+				background: url(../img/ico-arr.png) no-repeat center/100%;
+			}
+			&.slick-prev{
+				left: -70px;
+				@include mq{
+					left: 0;
+					z-index: 10;
+				}
+			}
+			&.slick-next{
+				right: -70px;
+				transform: translateY(-50%) rotate(180deg);
+				@include mq{
+					right: 0;
+				}
+			}
+		}
+		&-item{
+			padding: 0 19px;
+			@include mq(sm){
+				padding: 0;
+			}
+		}
+		&-img{
+			position: relative;
+			border-radius: 9px;
+			overflow: hidden;
+			margin-bottom: 20px;
+		}
+		&-tags{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			@include font-size(16);
+			font-weight: 600;
+			color: #fff;
+			width: 129px;
+			height: 30px;
+			@include flex(0, center);
+			padding-left: 10px;
+			padding-top: 1.5px;
+			&--blue{
+				background: url(../img/label-blue.png) no-repeat center right/100%;
+			}
+			&--yellow{
+				background: url(../img/label-yellow.png) no-repeat center right/100%;
+			}
+		}
+		&-thumb{
+			@include aspect-ratio(568, 314);
+		}
+		&-ttl{
+			@include font-size(18);
+			margin-bottom: 10px;
+		}
+		time{
+			@include font-size(15);
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		&-desc{
+			
+		}
+	}
+}
+
+
+.top-about{
+	background: #cfdce8;
+	padding: 82px 0 135px;
+	@include mq{
+		padding: 30px 0;
+	}
+	&__intro{
+		padding-bottom: 9.219vw;
+		position: relative;
+		@include mq{
+
+		}
+		&-ttl{
+			text-align: center;
+			font-family: $font-ImprintMT;
+			font-size: clamp(4rem, 2.277rem + 4.595vw, 11.1rem);
+			margin-bottom: 12px;
+			position: relative;
+			z-index: 2;
+			letter-spacing: 4.8px;
+			@include mq{
+				letter-spacing: 2px;
+			}
+		}
+		&-txt{
+			font-size: clamp(1.8rem, 1.266rem + 1.424vw, 4rem);
+			font-weight: 600;
+			text-align: center;
+			position: relative;
+			z-index: 2;
+			line-height: 1.95;
+			letter-spacing: 1.5px;
+			@include mq{
+				line-height: 1.5;
+			}
+		}
+	}
+	&__txt-lead{
+		font-size: clamp(1.8rem, 1.412rem + 1.036vw, 3.4rem);
+		margin-bottom: 6.094vw;
+		@include mq{
+
+		}
+		span{
+			text-decoration: underline;
+		}
+	}
+	&__list{
+		&-item{
+			@include flex(0, 0, wrap);
+			margin-bottom: 5.938vw;
+			@include mq{
+				margin-bottom: 60px;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			&:nth-child(even){
+				flex-direction: row-reverse;
+				.top-about{
+					&__list{
+						&-info{
+							padding-left: 0;
+							padding-right: 77px;
+							@include mq{
+								padding-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		&-img{
+			width: 640px;
+			position: relative;
+			top: -20px;
+			padding: 33px;
+			@include mq{
+				padding: 22px;
+				width: 100%;
+			}
+			&::before, &:after{
+				z-index: 10;
+			}
+			@include p-before(60px, 60px){
+				background: url(../img/triagle-yellow.png) no-repeat top right/100%;
+				top: 0;
+				right: 0;
+				@include mq{
+					width: 40px;
+					height: 40px;
+				}
+			}
+			@include p-after(60px, 60px){
+				background: url(../img/triagle-blue.png) no-repeat top right/100%;
+				left: 0;
+				bottom: 0;
+				@include mq{
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+		&-thumb{
+			position: relative;
+			img{
+				position: relative;
+				z-index: 2;
+			}
+			@include p-before(100%, 100%){
+				background: #e9ecf2;
+				top: -15px;
+				right: -15px;
+			}
+			@include p-after(100%, 100%){
+				background: #e9ecf2;
+				left: -15px;
+				bottom: -15px;
+			}
+		}
+		&-info{
+			width: calc(100% - 640px);
+			padding-left: 75px;
+			@include mq{
+				width: 100%;
+				padding-left: 0;
+			}
+		}
+		&-ttl{
+			font-size: clamp(1.5rem, 1.306rem + 0.518vw, 2.3rem);
+			color: #fcb42a;
+			line-height: 1;
+			margin-bottom: 50px;
+			@include mq{
+				margin-bottom: 20px;
+			}
+			span{
+				display: inline-block;
+				font-size: clamp(2.8rem, 2.387rem + 1.1vw, 4.5rem);
+				color: #000;
+				margin-top: 10px;
+				letter-spacing: 2px;
+				border-bottom: 2px solid;
+				padding-bottom: 5px;
+			}
+		}
+		&-desc{
+			@include fts(18, 44);
+			margin-bottom: 63px;
+			@include mq{
+				@include font-size(15);
+				margin-bottom: 20px;
+				line-height: 1.8;
+			}
+		}
+		&-tags{
+			@include flex(0,0,wrap);
+			gap: 16px;
+			li{
+				@include font-size(17);
+				display: inline-block;
+				padding: 3px 14px;
+				background: #fcb42a;
+				@include mq{
+					@include font-size(14);
+				}
+			}
+		}
+	}
+	&__block{
+		&--01{
+			margin-bottom: 15.313vw;
+			@include mq{
+				margin-bottom: 50px;
+			}
+		}
+		&--02{
+			@include flex(between, start, wrap);
+			padding-right: 3.4%;
+			margin-bottom: 12.917vw;
+			@include mq{
+				padding-right: 0;
+				margin-bottom: 50px
+			}
+			.c-txt__01{
+				@include fts(23, 48);
+				margin-bottom: 9.167vw;
+				max-width: 760px;
+				@include mq{
+					@include font-size(16);
+				}
+			}
+			.top-about{
+				&__ttl-sub{
+					margin-bottom: 64px;
+					@include mq{
+						margin-bottom: 30px;
+					}
+				}
+				&__txt-lead{
+					margin-bottom: 6.771vw;
+					line-height: 1.5;
+					max-width: 760px;
+				}
+				&__block{
+					@include mq{
+						&-img{
+							order: 1
+						}
+						&-infor{
+							order: 2
+						}
+					}
+				}
+			}
+		}
+		&--03{
+			@include flex(between, 0, wrap);
+			padding-right: 3.4%;
+			@include mq{
+				padding-right: 0;
+			}
+			.top-about__block-img{
+				&::before, &:after{
+					display: none;
+				}
+			}
+			.top-about{
+				&__ttl-sub{
+					margin-bottom: 70px;
+					@include mq{
+						margin-bottom: 30px;
+					}
+				}
+				&__txt-lead{
+					margin-bottom: 57px;
+					@include mq{
+						margin-bottom: 30px;
+					}
+				}
+				&__block-infor{
+					width: 46.8%;
+					@include mq{
+						width: 100%;
+						margin-bottom: 30px;
+					}
+				}
+				&__block-img{
+					width: 50.2%;
+					position: relative;
+					right: -20px;
+					top: 14px;
+					@include mq{
+						width: 100%;
+						right: 0;
+						top: 0;
+					}
+				}
+			}
+		}
+		&-infor{
+			width: 57.8%;
+			padding-right: 43px;
+			@include mq{
+				width: 100%;
+				padding-right: 0;
+			}
+		}
+		&-img{
+			position: relative;
+			width: 42.2%;
+			@include mq{
+				width: 100%;
+				padding: 20px;
+				margin-bottom: 30px;
+			}
+			&::before, &:after{
+				z-index: 10;
+			}
+			@include p-before(50px, 50px){
+				background: url(../img/triagle-yellow-02.png) no-repeat top right/100%;
+				top: -12px;
+				left: -7px;
+				@include mq{
+					width: 40px;
+					height: 40px;
+					top: 16px;
+					left: 16px;
+				}
+			}
+			@include p-after(50px, 50px){
+				background: url(../img/triagle-blue-02.png) no-repeat top right/100%;
+				right: -22px;
+				bottom: -27px;
+				@include mq{
+					width: 40px;
+					height: 40px;
+					right: 16px;
+					bottom: 16px;
+				}
+			}
+		}
+		&-thumb{
+			position: relative;
+			img{
+				position: relative;
+				z-index: 2;
+			}
+			@include p-after(100%, 98.5%){
+				background: #e9ecf2;
+				left: 20px;
+				bottom: -20px;
+				@include mq{
+					left: 15px;
+					bottom: -15px;
+				}
+			}
+		}
+	}
+	&__student{
+		&-ttl{
+			color: #fff;
+			background: #000;
+			@include font-size(34);
+			line-height: 1;
+			padding: 22px 29px;
+			font-weight: 700;
+			margin-bottom: 60px;
+			letter-spacing: 2px;
+			@include mq{
+				@include font-size(20);
+				padding: 15px 15px;
+				margin-bottom: 30px;
+			}
+		}
+		&-dl{
+			@include flex(0, 0, wrap);
+			background: #fcdc4a;
+			margin-bottom: 15px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+		&-dt, &-dd{
+			min-height: 118px;
+			@include mq{
+				min-height: auto;
+			}
+		}
+		&-dt{
+			width: 270px;
+			background: #2564d6;
+			color: #fff;
+			padding: 15px 32px;
+			@include font-size(24);
+			@include mq{
+				width: 100%;
+				@include font-size(18);
+				padding: 10px 20px;
+			}
+		}
+		&-dd{
+			width: calc(100% - 270px);
+			padding: 14px 46px 18px 15px;
+			@include font-size(21.72);
+			line-height: 1.2;
+			letter-spacing: 2px;
+			@include mq{
+				width: 100%;
+				@include font-size(16);
+				letter-spacing: 1px;
+				line-height: 1.5;
+			}
+		}
+	}
+	&__txt-circle{
+		max-width: 630px;
+	}
+}
+
+
+
+
+.top-school{
+	padding: 136px 0 160px;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__wp{
+		@include flex(0, 0,wrap);
+	}
+	&__heading{
+		width: 430px;
+		padding-top: 25px;
+		@include mq{
+			width: 100%;
+			padding-top: 0;
+		}
+		&-ttl{
+			@include font-size(24);
+			margin-bottom: 47px;
+			letter-spacing: 2px;
+			@include mq{
+				@include font-size(20);
+				margin-bottom: 20px;
+			}
+			span{
+				font-family: $font-GillSans;
+				@include font-size(45);
+				line-height: 1;
+				display: block;
+				letter-spacing: 3px;
+				margin-bottom: 27px;
+				@include mq{
+					@include font-size(30);
+					margin-bottom: 10px;
+				}
+			}
+		}
+		&-txt-lead{
+			@include fts(30, 43);
+			font-weight: 700;
+			margin-bottom: 30px;
+			letter-spacing: 1.5px;
+			@include mq{
+				@include font-size(22);
+				letter-spacing: 0;
+				margin-bottom: 15px;
+			}
+		}
+		&-control{
+			max-width: 200px;
+			margin-left: auto;
+			margin-right: 0;
+		}
+		.slider-prev, .slider-next{
+			outline: 0;
+			border: none;
+			box-shadow: none;
+			width: 40px;
+			height: 40px;
+			display: block;
+			background: url(../img/ico-arr.png) no-repeat center/100%;
+			margin-bottom: 30px;
+			margin-left: 24px;
+			cursor: pointer;
+			@include mq{
+				display: none;
+			}
+		}
+		.slider-next{
+			transform: rotate(180deg);
+			margin-bottom: 50px;
+		}
+		.slider-dots{
+			.slick-dots{
+				text-align: left;
+				position: static;
+				li{
+					margin: 0 4.5px;
+					button{
+						padding: 0;
+						width: 40px;
+                        height: 8px;
+						background: #a1a1a1;
+						&::before{
+							display: none;
+						}
+					}
+					&.slick-active{
+						button{
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		.slider-pagination{
+			@include font-size(11.16);
+			opacity: .57;
+			margin-top: 20px;
+			margin-left: 6px;
+			span{
+				@include font-size(13.59);
+				margin-right: 6px;
+			}
+		}
+	}
+	&__slider{
+		width: calc(100% - 430px);
+		overflow: hidden;
+		padding-right: 2.2%;
+		position: relative;
+        transform: translateY(-6%);
+        margin-bottom: 8.542vw;
+        @include mq{
+			width: 100%;
+			padding-right: 0;
+			transform: none;
+			margin-bottom: 0;
+		}
+		.slick-arrow{
+			display: none;
+		}
+		.slick-list{
+			padding: 20px 0;
+			margin: 0 -42px;
+		}
+		&-item{
+			padding: 0 42px;
+		}
+		&-img{
+			position: relative;
+			padding: 12px;
+			background: #f3f3f6;
+			margin-bottom: 10px;
+			&::before, &:after{
+				z-index: 10;
+				transform: rotate(180deg);
+			}
+			@include p-before(36px, 36px){
+				background: url(../img/triagle-blue.png) no-repeat top right/100%;
+				top: 0;
+				right: 0;
+				transform: rotate(180deg);
+				top: -5px;
+				right: -7px;
+			}
+			@include p-after(36px, 36px){
+				background: url(../img/triagle-yellow.png) no-repeat top right/100%;
+				left: -3px;
+				bottom: -7px;
+			}
+		}
+		&-ct{
+			padding: 0 34px 40px;
+			border-bottom: 14px solid #2564d6;
+			@include mq{
+				padding: 0 25px 20px;
+				border-bottom: 6px solid #2564d6;
+			}
+		}
+		&-ttl{
+			@include font-size(24);
+			font-weight: 700;
+			color: #767676;
+			margin-bottom: 8px;
+			@include mq{
+				@include font-size(18);
+			}
+		}
+		&-tags{
+			@include font-size(14);
+			color: #d30c33;
+			border: 1px solid;
+			border-radius: 5px;
+			padding: 2px 10px;
+			margin-bottom: 35px;
+			display: inline-block;
+			@include mq{
+				@include font-size(12);
+				margin-bottom: 15px;
+			}
+		}
+		&-desc{
+			
+		}
+	}
+	&__control{
+		max-width: 920px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0 3.229vw;
+		// @include mq{
+		// 	gap: 0 15px;
+		// }
+	}
+}
+
+
+
+.top-teacher{
+	padding: 150px 0 33em;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__ttl{
+		margin-bottom: 72px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+		.txt-jp{
+			margin-top: 12px;
+			@include mq{
+				margin-top: 0;
+			}
+		}
+	}
+	
+	&__img{
+		width: 56.5%;
+		padding-left: 27px;
+		margin-top: 50px;
+		@include mq{
+			width: 100%;
+			padding-left: 0;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		span{
+			padding: 36px 28px;
+			@include mq{
+				padding: 15px;
+			}
+		}
+		&::before{
+			top: -20px;
+			@include mq{
+				top: -10px;
+				left: -10px;
+			}
+		}
+		&:after{
+			right: -20px;
+			bottom: -26px;
+			@include mq{
+				right: -10px;
+				bottom: -10px;
+			}
+		}
+	}
+	&__info{
+		width: 38.2%;
+		@include mq{
+			width: 100%;
+		}
+		.c-txt__02{
+			max-width: 583px;
+			letter-spacing: 0.8px;
+			margin-bottom: 10.104vw;
+			@include mq{
+				margin-bottom: 30px;
+			}
+		}
+	}
+	&__ttlsub{
+		font-size: clamp(2.5rem, 1.713rem + 2.099vw, 5.743rem);
+		font-weight: 700;
+		line-height: 1.25;
+		margin-bottom: 54px;
+		@include mq{
+			margin-bottom:  20px;
+		}
+		span{
+			margin-left: 50px;
+			@include mq{
+				margin-left: 20px;
+			}
+		}
+		ruby{
+			margin-left: 40px;
+			@include mq{
+				margin-left: 15px;
+			}
+			rt{
+				font-size: 35%;
+				text-align: center;
+				position: relative;
+				top: -8px;
+			}
+		}
+	}
+	
+	&__box{
+		@include flex(between, start, wrap);
+		margin-bottom: 172px;
+		@include mq(xl){
+			margin-bottom: 100px;
+		}
+		@include mq{
+			margin-bottom: 50px;
+		}
+		&--sub{
+			margin-bottom: 200px;
+			@include mq(xl){
+				margin-bottom: 100px;
+			}
+			@include mq{
+				margin-bottom: 50px;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			&:nth-last-child(2){
+				margin-bottom: 37px;
+			}
+			.top-teacher{
+				&__img{
+					width: 30%;
+					margin-top: 15px;
+					padding-left: 13px;
+					padding-right: 6px;
+					@include mq{
+						width: 100%;
+					}
+					&::before, &::after{
+						width: 50px;
+						height: 50px;
+					}
+					&::before{
+						top: -10px;
+					}
+					&:after{
+						right: -2px;
+						bottom: -10px;
+					}
+					span{
+						padding: 20px 15px;					
+					}
+				}
+				&__info{
+					width: 63%;
+					@include mq{
+						width: 100%;
+					}
+					.c-txt__02{
+						max-width: 100%;
+						margin-bottom: 54px;
+					}
+					.box-career{
+						.c-txt__02{
+							margin-bottom: 40px;
+						}
+					}
+				}
+				&__ttlsub{
+					margin-bottom: 74px;
+					@include mq{
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+		&--last{
+			margin-bottom: 0;
+			.top-teacher{
+				&__season{
+					max-width: 600px;
+					margin: 0 auto 130px;
+					position: relative;
+					left: 16px;
+					@include mq(tb){
+						margin-bottom: 80px;
+					}
+					@include mq{
+						max-width: 250px;
+						margin-bottom: 30px;
+					}
+				}
+				&__img{
+					width: 45.53%;
+					padding-left: 0;
+					padding-right: 25px;
+					@include mq{
+						width: 100%;
+						padding-right: 0;
+					}
+					&::before, &::after{
+						width: 60px;
+						height: 60px;
+						@include mq{
+							width: 40px;
+							height: 40px;
+						}
+					}
+					&::before{
+						top: -16px;
+						left: auto;
+						right: 14px;
+						transform: rotate(90deg);
+						@include mq{
+							right: -15px;
+						}
+					}
+					&:after{
+						right: auto;
+						bottom: -4px;
+						transform: rotate(90deg);
+						left: -12px;
+					}
+					span{
+						padding: 15px 26px;
+						@include mq{
+							padding: 15px;
+						}
+					}
+				}
+				&__info{
+					width: calc(100% - 45.53%);
+					padding-top: 6.5%;
+					@include mq{
+						width: 100%;
+					}
+					.c-txt__02{
+						@include font-size(24);
+						max-width: 100%;
+						text-align: center;
+						margin-bottom: 100px;
+						line-height: 2;
+						@include mq(tb){
+							margin-bottom: 60px;
+						}
+						@include mq{
+							@include font-size(15);
+							line-height: 1.8;
+							margin-bottom: 30px;
+						}
+					}
+					.c-btn__01{
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.box-career{
+	&__ttl{
+		font-size: clamp(1.2rem, 1.106rem + 0.252vw, 1.589rem);
+		margin-bottom: 25px;
+		@include mq{
+			margin-bottom: 15px;
+		}
+		span{
+			display: block;
+			font-size: clamp(3rem, 2.334rem + 1.775vw, 5.743rem);
+			line-height: 1;
+			margin-bottom: 15px;
+			font-weight: 700;
+			@include mq{
+				margin-bottom: 4px;
+			}
+		}
+	}
+	.c-txt__02{
+		margin-bottom: 20px;
+	}
+	&__control{
+		@include flex(start, center);
+		gap: 10px;
+		@include mq{
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		li{
+			a{
+				color: #000;
+				max-width: 310px;
+				width: 100%;
+				height: 92px;
+				background: #fcb42a;
+				border-radius: 44px 31px 31px 44px;
+				@include flex(start, center, wrap);
+				align-content: center;
+				position: relative;
+				padding-left: 108px;
+				letter-spacing: 1px;
+				white-space: nowrap;
+				@include mq{
+					height: auto;
+					display: block;
+					padding: 10px 20px 10px 60px;
+					line-height: 1;
+				}
+				@include p-before(82px, 82px){
+					background: url(../img/ico-yt.png) no-repeat center/100%;
+					top: 5px;
+					left: 5px;
+					@include mq{
+						width: 40px;
+						height: 40px;
+						top: calc(50% - 20px);
+					}
+				}
+				span{
+					display: block;
+					&:nth-child(1){
+						font-family: $font-GillSans;
+						@include font-size(11.82);
+						font-weight: 700;
+						margin-bottom: 12px;
+					}
+					&:nth-child(2){
+						@include font-size(16.14);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.top-lecturer{
+	padding: 0;
+	.c-ttl__01{
+		margin-bottom: 122px;
+		@include mq(tb){
+			margin-bottom: 80px;
+		}
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__list{
+		max-width: 1350px;
+		margin: 0 auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 60px 113px;
+		margin-bottom: 128px;
+		@include mq(tb){
+			margin-bottom: 80px;
+		}
+		@include mq{
+			grid-template-columns: repeat(2, minmax(0,1fr));
+			gap: 30px 15px;
+			margin-bottom: 30px;
+		}
+		&-img{
+			margin-bottom: 23px;
+			@include mq{
+				margin-bottom: 15px;
+			}
+		}
+		&-ttl{
+			text-align: center;
+			@include font-size(24);
+			margin-bottom: 22px;
+			@include mq{
+				@include font-size(17);
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.c-btn__01{
+		margin: 0 auto;
+	}
+}
+
+.top-qualification{
+	padding: 107px 0;
+	@include mq{
+		padding: 50px 0 0;
+	}
+	&__ttl{
+		margin-bottom: 124px;
+		@include mq(tb){
+			margin-bottom: 80px;
+		}
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	
+	.txt-deco{
+		-webkit-text-stroke: 1px #e0e0e0;
+		&--top{
+			top: -65px;
+			@include mq{
+				top: 0;
+				right: 0;
+				left: auto;
+			}
+		}
+		&--bottom{
+			right: -3px;
+			transform: translateY(90%);
+		}
+	}
+	
+	&__info{
+		@include flex(between,0, wrap);
+		margin-bottom: 62px;
+		position: relative;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__heading{
+		width: 53%;
+		position: relative;
+		@include mq{
+			width: 100%;
+		}
+		.c-txt__01{
+			max-width: 720px;
+			letter-spacing: 0px;
+			@include mq(xl-min){
+				line-height: 2.9;
+			}
+		}
+	}
+	&__ttlsub{
+		@include font-size(25.94);
+		font-weight: 700;
+		margin-bottom: 114px;
+		line-height: 1.5;
+		@include mq(tb){
+			margin-bottom: 50px;
+		}
+		@include mq{
+			@include font-size(20);
+			margin-bottom: 15px;
+		}
+		span{
+			@include font-size(16);
+			display: block;
+			color: #fcb42a;
+			margin-bottom: 16px;
+			@include mq{
+				@include font-size(14);
+				margin-top: 0;
+			}
+		}
+	}
+	&__ttlsub02{
+		width: 47%;
+		font-family: $font-URWDINSemi;
+		font-size: clamp(5rem, 3.141rem + 4.957vw, 12.658rem);
+		line-height: 1;
+		position: relative;
+		top: -15px;
+		@include mq{
+			width: 100%;
+			top: 0;
+		}
+	}
+	&__img{
+		@include flex(end,start, wrap);
+		margin-right: 13.5vw;
+		position: relative;
+		z-index: 2;
+		@include mq{
+			margin-right: 0;
+			justify-content: space-between;
+		}
+	}
+	&__imgsub{
+		&:nth-child(1){
+			width: 695px;
+			margin-top: 124px;
+			margin-right: 190px;
+			@include mq{
+				width: 48%;
+				margin-top: 30px;
+				margin-right: 0;
+			}
+		}
+		&:nth-child(2){
+			width: 383px;
+			@include mq{
+				width: 48%;
+			}
+		}
+	}
+	
+	&__box{
+		margin-bottom: 87px;
+		@include mq{
+			margin-bottom: 40px;
+		}
+		&--styles02{
+			@include flex(0,0,wrap);
+			margin-bottom: 0;
+			.top-qualification{
+				&__info{
+					display: block;
+					width: 53.5%;
+					@include mq{
+						width: 100%;
+					}
+					.c-txt__02{
+						max-width: 712px;
+						line-height: 2;
+						margin-bottom: 157px;
+						@include mq(tb){
+							margin-bottom: 80px;
+						}
+						@include mq{
+							margin-bottom: 30px;
+						}
+					}
+					.c-btn__01{
+						margin: 0 auto;
+					}
+				}
+				&__ttlsub{
+					margin-bottom: 80px;
+					@include mq(tb){
+						margin-bottom: 50px;
+					}
+					@include mq{
+						margin-bottom: 20px;
+					}
+				}
+				&__img{
+					width: 46.5%;
+					margin-right: 0;
+					display: block;
+					@include mq{
+						width: 100%;
+					}
+					&-thumb{
+						max-width: 566px;
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+.top-uniform{
+	padding: 5vw 0 11vw;
+	@include mq{
+		padding: 50px 0;
+	}
+	.inner{
+		@include flex(0,0,wrap);
+	}
+	&__ct{
+		width: 48%;
+		@include mq{
+			width: 100%;
+		}
+	}
+	&__ttl{
+		margin-bottom: 120px;
+		@include mq(tb){
+			margin-bottom: 80px;
+		}
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__ttlsub{
+		font-size: clamp(4rem, 2.938rem + 2.831vw, 8.374rem);
+		letter-spacing: 7px;
+		margin-bottom: 72px;
+		@include mq{
+			letter-spacing: 2.5px;
+			margin-bottom: 30px;
+		}
+		span{
+			font-size: clamp(1.8rem, 1.654rem + 0.388vw, 2.4rem);
+		}
+	}
+	&__desc{
+		font-size: clamp(1.6rem, 1.163rem + 1.165vw, 3.4rem);
+		font-weight: 700;
+		letter-spacing: -3px;
+	}
+	&__img{
+		width: 52%;
+		margin-left: auto;
+		margin-right: 0;
+		padding-right: 44px;
+		margin-top: 40px;
+		@include mq{
+			width: 100%;
+			padding-right: 0;
+			margin-top: 30px;
+		}
+	}
+}
+
+.top-event{
+	background: url(../img/bg-event.jpg) no-repeat center/cover;
+	padding: 100px 0 14vw;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__ttl{
+		color: #fff;
+		margin-bottom: 66px;
+		@include mq{
+			margin-bottom: 30px
+		}
+	}
+	&__intro{
+		@include flex(between,0, wrap);
+		margin-bottom: 164px;
+		@include mq(tb){
+			margin-bottom: 100px;
+		}
+		@include mq{
+			margin-bottom: 40px;
+		}
+	}
+	&__ttlsub{
+		font-size: clamp(4.62rem,3.465rem + 6.414vw,19.62rem);
+		color: #fff;
+		line-height: 1;
+		letter-spacing: 11px;
+		@include mq{
+			letter-spacing: 2px;
+		}
+	}
+	&__desc{
+		max-width: 642px;
+		width: 100%;
+		color: #fff;
+		padding-top: 20px;
+		.txt-lead{
+			@include font-size(33.54);
+			font-weight: 70;
+			margin-bottom: 4vw;
+			@include mq{
+				@include font-size(20.54);
+			}
+		}
+		.c-txt__01{
+			max-width: 360px;
+			line-height: 1.65;
+		}
+	}
+	&__list{
+		max-width: 1260px;
+		width: 100%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 125px 90px;
+		@include mq{
+			grid-template-columns: 1fr 1fr;
+			gap: 30px 15px;
+		}
+		&-item{
+			@include font-size(23.73);
+			padding-bottom: 115px;
+			border-bottom: 2px solid #b1b1b1;
+			color: #fff;
+			@include mq(tb){
+				padding-bottom: 80px;
+			}
+			@include mq{
+				@include font-size(18);
+				padding-bottom: 30px;
+			}
+			span{
+				@include font-size(12);
+				color: #2564d6;
+				display: block;
+				margin-bottom: 20px;
+				@include mq{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+.top-timetable{
+	padding: 11.198vw 0 7.448vw;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__wp{
+		@include flex(0,0,wrap);
+	}
+	&__info{
+		width: 35%;
+		padding-right: 6%;
+		position: relative;
+		top: -13px;
+		@include mq{
+			width: 100%;
+			padding-right: 0;
+		}
+		.c-txt__02{
+			line-height: 2.2;
+		}
+	}
+	&__ttl{
+	    margin-bottom: 60px;
+	    @include mq{
+			margin-bottom: 30px;
+		}
+		.txt-jp{
+			margin-top: 0;
+		}
+	}
+	&__ttlsub{
+		@include mq(md-min){
+			@include font-size(88.86);
+			margin-bottom: 4.4vw;
+			letter-spacing: 3.5px;
+		}
+	}
+	&__img{
+		width: 65%;
+		@include mq{
+			width: 100%;
+		}
+	}
+}
+
+.top-youtube{
+	background: #e1e1e1;
+	padding: 215px 0;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__ttl{
+		margin-bottom: 30px;
+		text-align: center;
+		@include mq{
+			margin-bottom: 10px;
+		}
+	}
+	.c-btn__01{
+		margin: 0 auto;
+	}
+}
+
+.top-attention{
+	background: #000;
+	padding: 5.469vw 0 8vw;
+	position: relative;
+	@include mq{
+		padding: 50px 0;
+	}
+	@include p-after(25.3%, 100%){
+		background: #04a1c3;
+		top: 0;
+		right: 0;
+	}
+	.inner{
+		@include flex(between,0, wrap);
+		position: relative;
+		z-index: 10;
+	}
+	&__heading{
+		width: 31%;
+		padding-top: 2vw;
+		margin-bottom: 50px;
+		padding-left: 23px;
+		text-align: right;
+		@include mq{
+			width: 100%;
+			padding-top: 0;
+		}
+		span{
+			color: #e85a25;
+			padding-right: 100px;
+			text-align: right;
+			position: relative;
+			margin-right: 6vw;
+			letter-spacing: 1.5px;
+			@include mq{
+				padding-right: 80px;
+				@include font-size(14);
+			}
+			@include p-after(74px, 2px){
+				background: #e85a25;
+				top: 15px;
+				right: 0;
+				@include mq{
+					top: 9px;
+				}
+			}
+		}
+	}
+	&__ttl{
+		max-width: 390px;
+		margin-bottom: 50px;
+		@include mq{
+			max-width: 240px;
+			margin: 0 auto 30px;
+		}
+	}
+	&__movie{
+		width: 69%;
+		@include mq{
+			width: 100%;
+		}
+		img, video, iframe{
+			width: 87.5%;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.top-address{
+	padding: 7.7vw 0 7.4vw;
+	background: #cfdce8;
+	position: relative;
+	@include mq{
+		padding: 50px 0;
+	}
+	@include p-after(55%, 100%){
+		background: #e1e1e1;
+		top: 0;
+		right: 0;
+	}
+	&__ttl{
+		margin-bottom: 8.3vw;
+		font-size: clamp(4rem, 2.819rem + 3.15vw, 8.866rem);
+		letter-spacing: 4px;
+		@include mq{
+			letter-spacing: 2px;
+			margin-bottom: 20px;
+		}
+	}
+	.inner{
+		position: relative;
+		@include flex(0 ,0, wrap);
+		z-index: 10;
+	}
+	&__left{
+		width: calc(100% - 58.6%);
+		@include mq{
+			width: 100%;
+		}
+	}
+	&__desc{
+		max-width: 390px;
+		margin-left: auto;
+		margin-right: 12%;
+		@include font-size(16.72);
+		@include mq{
+			@include font-size(14);
+			margin-right: 0;
+		}
+		p{
+			margin-bottom: 40px;
+			border-bottom: 1px solid;
+			padding-bottom: 13px;
+			@include mq{
+				margin-bottom: 20px;
+				padding-bottom: 8px;
+			}
+			&:last-of-type{
+				line-height: 1.8;
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__right{
+		width: 58.6%;
+		padding-top: 11vw;
+		@include mq{
+			width: 100%;
+		}
+		iframe{
+			width: 100%;
+			height: 668px;
+			@include mq{
+				height: 400px;
+			}
+		}
+	}
+}
+
+.top-support{
+	padding: clamp(4em,14vw,16.3em) 0 clamp(4em,12vw,13.8em);
+	&__ttl{
+		text-align: center;
+		margin-bottom: 120px;
+		// @include font-size(72.15);
+		font-size: clamp(4rem, 3.22rem + 2.081vw, 7.215rem);
+		letter-spacing: 4px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 150px 90px;
+		max-width: 1155px;
+		margin: 0 auto;
+		@include mq{
+			gap: 40px 30px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		li{
+			@include flex(center, center);
+		}
+	}
+}
+
+.top-inquiry{
+	background: #fcb42a;
+	padding: clamp(4em,14vw,19em) 0 clamp(4em,14vw,24em);
+	@include flex(between, 0,wrap);
+	@include mq{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	&__left{
+		width: 355px;
+		padding-left: 65px;
+		margin-top: -7px;
+		@include mq{
+			width: 100%;
+			padding-left: 0;
+		}
+	}
+	&__ttl{
+		font-size: clamp(3rem, 2.287rem + 1.902vw, 5.938rem);
+		font-family: $font-GillSans;
+		line-height: 1;
+		margin-bottom: 34px;
+		letter-spacing: 3px;
+		@include mq{
+			letter-spacing: 1.5px;
+			margin-bottom: 20px;
+		}
+		span{
+			font-size: clamp(2rem, 1.66rem + 0.906vw, 3.4rem);
+			font-family: $font-gothic;
+			display: block;
+			margin-top: 30px;
+			letter-spacing: 0;
+			@include mq{
+				margin-top: 15px;
+			}
+		}
+	}
+	.c-txt__02{
+		margin-bottom: 50px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__right{
+		width: 330px;
+		@include font-size(13.28);
+		letter-spacing: 1px;
+		@include mq{
+			width: 100%;
+			@include font-size(12);
+			margin-bottom: 10px;
+		}
+		p{
+			margin-bottom: 23px;
+			@include mq{
+				margin-bottom: 15px;
+			}
+		}
+		span{
+			@include font-size(18);
+			@include mq{
+				@include font-size(15);
+			}
+		}
+	}
+}

@@ -1,0 +1,295 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+//
+//.c-ft{
+//	&--en{
+//		font-family: $font-en;
+//	}
+//	&--jp{
+//		font-family: $font-jp;
+//	}
+//}
+
+
+
+.c-fw{//font-weight
+	&--lt{
+		font-weight: 300!important
+	}
+	&--rg{
+		font-weight: 400!important
+	}
+	&--md{
+		font-weight: 500!important
+	}
+	&--sbd{
+		font-weight: 600!important
+	}
+	&--bd{
+		font-weight: 700!important
+	}
+	&--bk{
+		font-weight: 900!important
+	}
+}
+
+
+
+.c-tx--v {
+	//Vertical writing
+	//display: inline-block;
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	&-pc{
+		@include mq(md-min) {
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+		}
+	}
+}
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__01{
+		@include fts(16,30);
+		@include mq{
+			@include font-size(14);
+		}
+	}
+	&__02{
+		@include fts(18,30);
+		@include mq{
+			@include font-size(15);
+		}
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		text-align: center;
+		margin-bottom: 62px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+		.txt-jp{
+			@include font-size(24);
+			text-align: center;
+			width: 100%;
+			display: block;
+			margin-top: 30px;
+			@include mq{
+				@include font-size(20);
+				margin-top: 10px;
+			}
+		}
+		.txt-en{
+			font-family: $font-URWDINSemi;
+			color: #fcb42a;
+			display: inline-block;
+			position: relative;
+			padding: 0 50px;
+			@include font-size(30);
+			letter-spacing: 5px;
+			&::before, &:after{
+				top: calc(50% - 2.5px);
+			}
+			@include p-before(134px, 5px){
+				background: #fcb42a;
+				left: 0;
+				transform: translateX(-100%);
+				@include mq{
+					width: 65px;
+					height: 3px;
+				}
+			}
+			@include p-after(134px, 5px){
+				background: #fcb42a;
+				right: 0;
+				transform: translateX(100%);
+				@include mq{
+					width: 65px;
+					height: 3px;
+				}
+			}
+			@include mq{
+				@include font-size(24);
+				letter-spacing: 2.5px;
+				padding: 0 25px;
+			}
+		}
+		&--blue{
+		    margin-bottom: 150px;
+		    @include mq{
+				margin-bottom: 30px
+			}
+			.txt-jp{
+				@include font-size(18);
+				margin-top: 17px;
+				font-weight: 700;
+				@include mq{
+					@include font-size(16);
+					margin-top: 0;
+				}
+			}
+			.txt-en{
+				color: #2564d6;
+				&::before, &:after{
+					background: #2564d6;
+				}
+			}
+		}
+	}
+	&__02{
+		font-size: clamp(1.6rem, 1.406rem + 0.518vw, 2.4rem);
+		margin-bottom: 32px;
+		span{
+			font-family: $font-GillSans;
+			display: block;
+			font-size: clamp(4.5rem, 3.56rem + 2.507vw, 8.374rem);
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: 7px;
+			@include mq{
+				letter-spacing: 3px;
+			}
+		}
+		&--styles02{
+			span{
+				margin-bottom: 20px;
+			}
+		}
+	}
+	&__03{
+		font-family: $font-GillSans;
+		// @include font-size(59.38);
+		font-size: clamp(4rem,3.772rem + .607vw,5.938rem);
+		font-weight: 700;
+		span{
+			display: block;
+			font-weight: 700;
+			@include font-size(34);
+			@include mq{
+				@include font-size(24);
+			}
+		}
+	}
+}
+
+//btn
+.c-btn{
+	&__01{
+		max-width: 427px;
+		width: 100%;
+		height: 70px;
+		@include flex(center, center);
+		border-radius: 35px;
+		@include font-size(30);
+		font-weight: 700;
+		@include mq{
+			max-width: 320px;
+			height: 40px;
+			@include font-size(18);
+		}
+		&--blue{
+			color: #fff;
+			background: #2564d6;
+		}
+		&--red{
+			color: #fff;
+			background: #ff0000;
+		}
+		&--yellow{
+			background: #fcb42a;
+			color: #000;
+		}
+		&--orange{
+			background: #e85a25;
+			color: #fff;
+		}
+		&--sm{
+			max-width: 280px;
+			@include font-size(24);
+			@include mq{
+				max-width: 220px;
+				@include font-size(20);
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+
